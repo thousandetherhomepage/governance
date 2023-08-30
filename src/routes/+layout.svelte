@@ -20,6 +20,10 @@ export const prerender = true;
 :global(a) {
   color: #42b983;
   cursor: pointer;
+
+  &:hover {
+    color: #5742b9;
+  } 
 }
 
 header {
