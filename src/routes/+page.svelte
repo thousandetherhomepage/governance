@@ -26,7 +26,6 @@ article {
   flex: 1;
   min-width: 600px;
   max-width: 600px;
-  text-align: center;
   padding: 10px;
   margin: 10px;
   border: 1px solid rgba(0,0,0,0.2);

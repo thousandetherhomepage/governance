@@ -1,7 +1,3 @@
-<script>
-export const prerender = true;
-</script>
-
 <header>
   <h1>👑 Court of the Magistry</h1>
 </header>
