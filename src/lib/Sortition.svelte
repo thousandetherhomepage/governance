@@ -54,6 +54,13 @@
       result = r;
     })
   })
+
+  const ELECTION_STATES = [
+    //  { NOMINATING, WAITING_FOR_ENTROPY, GOT_ENTROPY }
+    "Accepting Nominations",
+    "Election Called: Tabulating Results",
+    "Election Completed: New term ready to begin",
+  ]
 </script>
 
 <h2>Sortition</h2>
@@ -64,6 +71,29 @@
   {/each}
 </ul>
 
+<dl>
+  <dt>Current term expires:</dt>
+  <dd>
+    {new Date(Number(result['termExpires']) * 1000)}
+    {#if result['termExpires'] < Date.now() / 1000}
+      <strong style="color: red;">(Expired)</strong>
+    {/if}
+  </dd>
+  <dt>Term Number</dt>
+  <dd>{result['termNumber']}</dd>
+  <dt>Acting Magistrate</dt>
+  <dd><a href="https://etherscan.io/address/{result['getMagistrate']}">{result['getMagistrate']}</dd>
+  <dt>Election Phase</dt>
+  <dd>{ELECTION_STATES[result['state']]}</dd>
+  <dt>Total pixels nominated</dt>
+  <dd>{result['nominatedPixels']}</dd>
+</dl>
 
 <style lang="scss">
+  dd {
+    font-weight: bold;
+  }
+  dt {
+    margin-top: 0.5em;
+  }
 </style>
