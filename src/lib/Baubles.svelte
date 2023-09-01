@@ -12,8 +12,8 @@
   const AIRSTACK_ENDPOINT = "https://api.airstack.xyz/gql";
   const client = new GraphQLClient(AIRSTACK_ENDPOINT);
 
-  //const address = "baubles.kether.eth";
-  const address = "0x6b175474e89094c44da98b954eedeac495271d0f"; // XXX
+  const address = "baubles.kether.eth";
+  //const address = "0x6b175474e89094c44da98b954eedeac495271d0f"; // DAI placeholder
 
   const query = gql`query BaublesBalances {
     Ethereum: TokenBalances(
