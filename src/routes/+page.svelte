@@ -36,7 +36,4 @@ article {
   border: 1px solid rgba(0,0,0,0.2);
   flex-direction: column;
 }
-
-footer {
-}
 </style>
