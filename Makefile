@@ -1,8 +1,8 @@
-run: deps
-	pnpm run dev
-
 build: deps
 	pnpm run build
+
+run: deps
+	pnpm run dev
 
 deps: node_modules
 
