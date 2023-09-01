@@ -1,6 +1,7 @@
 <script lang="ts">
   import Baubles from '$lib/Baubles.svelte';
   import Sortition from '$lib/Sortition.svelte';
+  import Publisher from '$lib/Publisher.svelte';
 </script>
   
 <h2>Governance dashboard for the <a href="https://thousandetherhomepage.com">ThousandEtherHomepage</a></h2>
@@ -13,6 +14,10 @@
 
   <article>
     <Sortition />
+  </article>
+
+  <article>
+    <Publisher />
   </article>
 </section>
 
@@ -29,5 +34,9 @@ article {
   padding: 10px;
   margin: 10px;
   border: 1px solid rgba(0,0,0,0.2);
+  flex-direction: column;
+}
+
+footer {
 }
 </style>

@@ -42,18 +42,19 @@
 
   onMount(() => {
     client.request(query).then(data => {
-      if (!data) {
+      data = data as BaublesBalances;
+      if (!data || !data.Ethereum.TokenBalance) {
         messages.push("No data");
         return;
       }
-      baubles.balances = (data as BaublesBalances).Ethereum.TokenBalance;
+      baubles.balances = data.Ethereum.TokenBalance;
     }).catch(err => {
       messages.push(err.message);
     })
   })
 </script>
 
-<h2>Baubles</h2>
+<h2>🎊 Baubles</h2>
 
 {#if messages.length > 0}
   <ul class="messages">
@@ -69,8 +70,13 @@
       <li><a href="https://etherscan.io/address/{balance.owner.addresses[0]}"><code>{balance.owner.addresses[0]}</code></a> {balance.amount}</li>
     {/each}
   </ul>
+{:else}
+  <p>No holders.</p>
 {/if}
 
+<p>
+    📝 <a href="https://medium.com/@ketherhomepage/thousand-ether-homepage-age-of-the-jubilee-963fd69c5d7">Baubles Instructions</a>
+</p>
 
 <style lang="scss">
 ul {
